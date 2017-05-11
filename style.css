@@ -102,10 +102,10 @@ h2.widget-title {
 #central-content {
     width: auto;
 }
-.custom-header-media:before {
+/*.custom-header-media:before {
     height: 50vh !important;
     background: none !important;
-}
+}*/
 #leaderboard {
     margin: .5em auto .5em auto;
     text-align: center;
@@ -114,7 +114,7 @@ h2.widget-title {
     margin-left: 0;
 }
 .content-area {
-    max-width: 82em;
+    max-width: 90em;
     margin-left: auto;
     margin-right: auto;
 }
@@ -218,6 +218,9 @@ figcaption.wp-caption-text p {
     padding-bottom: 0;
     position: relative;
 }
+.site-branding a:hover {
+    border-bottom: none;
+}
 #navigation-wrap.wrap {
     display: flex;
     margin-left: 0;
@@ -252,6 +255,9 @@ nav#site-navigation.main-navigation {
     display: inline;
     text-transform: uppercase;
 }
+.main-navigation > div > ul {
+    border-top: 0px solid;
+}
 .menu-item {
     background-color: #471176;
 }
@@ -272,6 +278,9 @@ nav#site-navigation.main-navigation {
 .menu-toggle {
     color: #FFF;
     float: right;
+}
+.menu-toggle:focus {
+    outline: none;
 }
 .dropdown-toggle {
     color: white;
@@ -670,10 +679,15 @@ input[type="search"] {
     padding: 0.25em;
     font-size: 1em;
 }
-
+.search-form {
+    font-family: 'Lato', sans-serif;
+}
+.search-form .search-submit {
+    padding: 0.25em;
+}
 .search-form .search-submit .icon {
     height: 15px;
-    top: -12px;
+    top: -4px;
 }
 
 /*-------------------static pages-----------*/
@@ -761,6 +775,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 /*----------------media queries--------------*/
 
 @media screen and (max-width: 48em) {
+/*one column videos/postboxes*/
     nav#site-navigation.main-navigation {
         float: none;
     }
@@ -787,7 +802,6 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
     #secondary.widget-area {
         margin-top: 1em;
-        margin-left: 3em;
     }
     .child {
         padding: 1em;
@@ -811,6 +825,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
 }
 @media screen and (max-width: 52em) {
+/*extra space between videos, full width category pages*/
     .archive-body {
         width: 100%;
     }
@@ -823,7 +838,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         background-image: none;
     }
     .custom-header {
-/*        position: static;*/
+/*position: static;*/
     }
     ul#top-menu.menu {
         margin-top: 3em;
@@ -839,6 +854,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
     ul.toggled-on {
         padding: 0;
+    }
+    form.search-form {
+        max-width: 8em;
     }
 }
 @media screen and (max-width: 960px) {
@@ -907,6 +925,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         height: 45vw;
         padding: 0;
     }
+    #video {
+        width: 100%;
+    }
     button.menu-toggle {
         text-align: left;
         margin: 0;
@@ -934,7 +955,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         float: none;
         width: 100% !important;
     }
-    .custom-header-media {
+    .custom-header-media img {
         height: 60vh !important;
     }
 }

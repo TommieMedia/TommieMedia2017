@@ -15,7 +15,7 @@
 
 		<div class="site-branding-text">
 			<?php //if ( is_front_page() ) : ?>
-				<a href="<?php echo get_site_url(); ?>"><img src="http://www.tommiemedia.com/wp-content/uploads/logo2.png" /></a><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<a href="<?php echo get_site_url(); ?>"><img src="http://www.tommiemedia.com/wp-content/uploads/tmlogo2.png" /></a><h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 			<?php //else : ?>
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 			<?php //endif; ?>

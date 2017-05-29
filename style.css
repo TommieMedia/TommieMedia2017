@@ -50,7 +50,7 @@ a.menu-scroll-down {
     padding: 0 4em;
 }
 .wsingle #secondary.widget-area {
-    width: 33.33% !important;
+    width: 33.33%;
 }
 .cc-single {
     width: 66.67% !important;
@@ -220,6 +220,9 @@ figcaption.wp-caption-text p {
 }
 .site-branding a:hover {
     border-bottom: none;
+}
+.site-branding-text a img {
+    max-width: 30em;
 }
 #navigation-wrap.wrap {
     display: flex;
@@ -529,6 +532,10 @@ a.rssbutton2 {
     width: 50%;
     overflow: hidden;
 }
+.top_child a:hover {
+    border-bottom: 0px solid;
+    opacity: 0.7;
+}
 .more-link p {
     display: none;
 }
@@ -823,6 +830,12 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     .featuredvideo {
         margin-top: 0.5em;
     }
+    .site-branding-text a img {
+        width: 100%;
+    }
+    input[type="search"] {
+    font-size: .75em;
+    }
 }
 @media screen and (max-width: 52em) {
 /*extra space between videos, full width category pages*/
@@ -872,7 +885,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
     #secondary.widget-area {
         float: none;
-        width: 100%;
+        width: 100% !important;
     }
     .widget_search {
         display: none;
@@ -932,7 +945,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         text-align: left;
         margin: 0;
         padding-left: 2em;
-        padding-right: 3em;
+        padding-right: 1em;
     }
 }
 @media screen and (max-width: 63em) {

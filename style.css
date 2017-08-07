@@ -135,6 +135,7 @@ h2.widget-title {
 .archive-page {
     display: flex;
     flex-direction: row;
+    margin: 0em 5em;
 }
 .archive-body {
     width: 66.7%;
@@ -338,7 +339,7 @@ nav#site-navigation.main-navigation {
     display: block;
     top: 0;
     left: 0;
-    width: 6em;
+    width: 8em;
     height: 51px;
     visibility: hidden;
 }
@@ -797,9 +798,33 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     padding-right: 1em;
 }
 /*----------------media queries--------------*/
-
+@media screen and (min-width: 30em) {
+    .site-branding {
+        padding: 0em;
+    }
+}
+    @media screen and (max-width: 42em) {
+/*    narrow/mobile view*/
+    #maincontent.wrap {
+        padding-right: 1em !important;
+        padding-left: 1em !important;
+    }
+    .wsingle {
+        padding: 0 .5em !important;
+    }
+    .wsingle {
+        padding: 0 0.5em !important;
+    }
+    #navigation-wrap.wrap {
+        padding: .5em !important;
+    }
+    .custom-header-media:before {
+        position: relative;
+    }
+}
 @media screen and (max-width: 48em) {
 /*one column videos/postboxes*/
+/*search box to top menu bar*/
     nav#site-navigation.main-navigation {
         float: none;
     }
@@ -839,7 +864,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         /*  order: 3;*/
     }
     #tmfooter {
-        padding: 1em;
+        padding: 1em !important;
     }
     .post-thumbnail a img {
         height: 25vh;
@@ -852,6 +877,25 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
     input[type="search"] {
     font-size: .75em;
+    }
+    #top-search {
+        margin-right: 1.5em;
+    }
+    #maincontent.wrap {
+        padding-left: 2em;
+        padding-right: 2em;
+    }
+    #navigation-wrap.wrap {
+        padding: 0 2em 0 2em;
+    }
+    .wsingle {
+        padding: 0 1em;
+    }
+    .wrap {
+        padding: 0 1em;
+    }
+    .main-navigation a {
+        padding: 1em 1.75em;
     }
 }
 @media screen and (max-width: 52em) {
@@ -868,7 +912,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         background-image: none;
     }
     .custom-header {
-/*position: static;*/
+position: static;
     }
     ul#top-menu.menu {
         margin-top: 3em;
@@ -910,7 +954,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     #top-search {
         display: block;
         margin-top: .25em;
-        margin-right: 3.5em;
+        margin-right: 0;
         order: 1;
     }
     .two-column {
@@ -924,6 +968,9 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     }
     .wsingle {
         padding: 0 2em;
+    }
+    .navigation-top.site-navigation-fixed {
+        padding-right: 2em;
     }
 }
 @media screen and (max-width: 1280px) {
@@ -962,7 +1009,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     button.menu-toggle {
         text-align: left;
         margin: 0;
-        padding-left: 2em;
+        padding-left: 0;
         padding-right: 1em;
         float: left;
     }

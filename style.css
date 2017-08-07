@@ -106,6 +106,18 @@ h2.widget-title {
     height: 50vh !important;
     background: none !important;
 }*/
+
+.custom-header:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to bottom left,rgba(0, 0, 0, 0), rgba(255, 255, 255, 1));
+    opacity: .5; 
+}
+
 #leaderboard {
     margin: .5em auto .5em auto;
     text-align: center;
@@ -223,7 +235,11 @@ figcaption.wp-caption-text p {
 }
 .site-branding-text a img {
     max-width: 30em;
+    display: block;
+    position: relative;
+    z-index:3;
 }
+
 #navigation-wrap.wrap {
     display: flex;
     margin-left: 0;
@@ -237,6 +253,7 @@ figcaption.wp-caption-text p {
     padding-bottom: .2em;
     border-top: 0px solid !important;
     border-bottom: 0px solid;
+    z-index: 2;
 }
 .navigation-top a {
     font-family: "Lato", sans-serif;
@@ -893,6 +910,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     #top-search {
         display: block;
         margin-top: .25em;
+        margin-right: 3.5em;
         order: 1;
     }
     .two-column {
@@ -946,6 +964,7 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
         margin: 0;
         padding-left: 2em;
         padding-right: 1em;
+        float: left;
     }
 }
 @media screen and (max-width: 63em) {

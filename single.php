@@ -16,7 +16,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<div id="leaderboard">
-		<?php echo adrotate_group(2); ?>
+	<?php
+		if ( function_exists(adrotate_group) ) {
+			echo adrotate_group(5);
+		}
+	?>
 		</div><!--leaderboard-->
 		<main id="main" class="site-main" role="main">
 			<div id="main-column">

@@ -33,24 +33,27 @@ get_header(); ?>
 <?php
 	global $post;
 	$args = array( 	
-		'posts_per_page' 	=> 8, 
+		'posts_per_page' 	=> 6, 
 		'post_type' 		=> 'post', 
 		'category' 			=> 4,
 		'orderby' 			=> 'date',
 		'order' 			=> 'DESC', 
+		'post_status' 		=> 'publish', 
 	); 
 	$slides = get_posts( $args );
 	if ( $slides ) {
-		foreach ( $slides as $p ) {
-			$i = '';
+		foreach( $slides as $p ) {
+			$i = get_the_post_thumbnail_url( $p );
 			$t = get_the_title($p);
-			$m = get_attached_media( 'image', $p->ID );
 			$l = get_post_permalink( $p->ID );
-			foreach( $m as $image ) {
-				$i = $image->guid;
-				break;
-			}
 			$e = get_the_excerpt($p);
+			if ( empty($i) ) {
+				$m = get_attached_media( 'image', $p->ID );
+				if (!empty($m)) {
+					$k = key($m);
+					$i = $m[$k]->guid;
+				}
+			}
 			if ( !empty($i) ) {
 ?>
 			<li>
@@ -91,7 +94,11 @@ get_header(); ?>
 <?php wp_reset_query(); ?>    
 
 <div id="leaderboard">
-<?php echo adrotate_group(2); ?>
+<?php
+	if ( function_exists(adrotate_group) ) {
+		echo adrotate_group(5);
+	}
+?>
 </div><!--leaderboard-->
 
 <div id="main-column" class="tm-landing">
@@ -290,49 +297,29 @@ else {
 <div id="video">
 <h2>TOP TOMMIEMEDIA VIDEOS</h2>
 	<div class="topvideo">
-		<ul class="slides">
-<?php
-	$args = array( 	
-		'posts_per_page' 	=> 7, 
-		'post_type' 		=> 'post', 
-		'category' 			=> 61,
-		'orderby' 			=> 'date',
-		'order' 			=> 'DESC', 
-	);
-	$videos = get_posts( $args );
-	if ( $videos ) {
-		$count = 0;
-		foreach ( $videos as $v ) {
-			if ( $count > 0 ) {
-				$i=''; $t=''; $m=''; $l=''; $ex='';
-				$t = get_the_title($v);
-				$m = get_attached_media( 'image', $v->ID );
-				$l = get_post_permalink( $v->ID );
-				foreach( $m as $image ) {
-					$i = $image->guid;
-					break;
-				}
-				if ( has_excerpt($v->ID) ) {
-					$ex = get_the_excerpt($v->ID);
-				}
-				else {
-					$ex = '';
-				}
-				if ( !empty($i) ) {
+<?php query_posts('showposts=2&cat=61'); ?>
+
+<?php if (have_posts()) : 
+	$count = 0;
+	$category_link = get_category_link( 61 );
 ?>
-			<li>
-				<a href="<?php echo $l; ?>"><img src="<?php echo $i; ?>" />
-				<p class="flex-caption"><strong><?php echo $t; ?></strong><br /><?php echo strip_tags($ex); ?></p></a>
-			</li>
-<?php
-				}
-			}
-			++$count;
-		}
-		wp_reset_postdata();
+<?php while (have_posts()) : the_post(); 
+	if ($count > 0) {
+
+?>
+<?php the_post_video(); ?>
+<p><a class="topvideo" href="<?php echo $category_link; ?>">More Top Videos</a></p>
+<?php 
 	}
+	++$count;
+	endwhile; 
 ?>
-		</ul>
+<?php else : ?>
+<!-- this should never happen -->
+<p>Currently no videos exist in the Featured Video category.</p>
+<?php endif; ?>
+
+<?php wp_reset_query(); ?>
 	</div>
 </div><!-- video -->
 </div><!--central content-->

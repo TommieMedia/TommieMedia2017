@@ -50,7 +50,7 @@
     <li>St. Paul, MN 55105</li>
    <br>
 <li>(651) 962-5260</li>
-<li><a href="mailto:tommiemedia@stthomas.edu">tommiemedia@stthomas.edu</a></li>
+<li><a href="mailto:tommiemedia@stthomas.edu">info@tommiemedia.org</a></li>
 </ul>
 <br>
  <p>

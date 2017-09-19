@@ -12,10 +12,14 @@
 
 get_header(); ?>
 
-<div class="wrap">
+<div class="wrap archive-wrap">
 	<div id="primary" class="content-area">
 		<div id="leaderboard">
-		<?php echo adrotate_group(2); ?>
+		<?php
+			if ( function_exists(adrotate_group) ) {
+				echo adrotate_group(5);
+			}
+		?>
 		</div><!--leaderboard-->
 		<main id="main archive" class="site-main archive-page" role="main">
 			<div class="archive-body">

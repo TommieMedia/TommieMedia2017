@@ -44,6 +44,7 @@ jQuery(window).load(function() {
 		directionNav: false,
 		initDelay: 0,
 		slideshowSpeed: 5000,
+		minItems: 6,
 		start: function(){
         	jQuery('.flex-control-paging').removeClass('flex-control-paging');
     	}
